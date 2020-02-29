@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="navbar" >
+    <ion-title>التعليقــات</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-image: url(assets/imgs/background.jpg)">
+  <!-- <p text-right>{{com.com.date.getHours()}} فى غصـون الساعة , {{com.com.date.getDate()}}</p>
+  <img src="assets/imgs/{{com.user.photo}}">
+  -->
+  <h5 text-center style="margin-top: 70%" *ngIf="!status"><b><u> ... لم يتم اضافة اى تعليقها على هذا المنشور بعد</u></b></h5>
+  <div *ngIf="status">
+    <ion-card *ngFor="let com of mycommentslist">
+        <ion-item style="background-color: azure;">
+            <h2 text-right *ngIf="com.v">{{com.user.first_name}} {{com.user.last_name}}</h2>
+            <h2 text-right *ngIf="!com.v">د/ {{com.user.first_name}} {{com.user.last_name}}</h2>
+          <ion-avatar item-end>
+            <img src="assets/imgs/defult.jpg">
+          </ion-avatar>
+          <ion-avatar item-start>
+            <button ion-button icon-only clear small *ngIf="com.i" (click)="deletecomment(com.com.id)">
+              <ion-icon name="trash" color="pink"></ion-icon>
+              </button>
+          </ion-avatar>
+          </ion-item>
+        <ion-card-content>
+          <p text-center>{{com.com.comment1}}</p>
+        </ion-card-content>
+        </ion-card >
+    </div>
+</ion-content>
+
+<ion-footer color="secondary">
+<ion-toolbar>
+    <ion-buttons end>
+        <button ion-button icon-left icon-only (click)="addnewcomment()">
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-item id="rounded">
+        <ion-input type="text" placeholder="... اضف تعليق" text-right [(ngModel)]="newcomment.comment1"></ion-input>
+      </ion-item>
+  
+</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,94 @@
+<!--
+  Generated template for the OrderdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>محتويات الطلب</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  style="background-image: url(assets/imgs/background.jpg)">
+  <ion-card>
+    <ion-list>
+      <!--******************* header row *************************-->
+      <ion-item>
+        <ion-row>
+          <ion-col col-2 text-right>
+          الاجمالى 
+          </ion-col>
+        <ion-col col-5 text-right>
+          السعر*الكمية
+          </ion-col>
+        <ion-col col-5 text-right>
+            الصنف
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <!--******************* data rows *************************-->
+      <ion-item *ngFor="let item of mydateilslist">
+          <ion-row>
+            <ion-col col-2 text-right>
+               {{item.totalprice}}
+            </ion-col>
+          <ion-col col-4 text-right>
+            {{item.order.quantity}}*{{item.pro.price}}
+            </ion-col>
+          <ion-col col-6 text-right>
+              {{item.pro.name}}
+            </ion-col>
+          </ion-row>
+        </ion-item>
+  <!--******************* concultion rows *************************-->
+  <ion-item>
+      <ion-row>
+        <ion-col col-2 text-right>
+            {{totalcosts}}
+        </ion-col>
+      <ion-col col-4 text-right>
+        </ion-col>
+      <ion-col col-6 text-right>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    </ion-list>
+  </ion-card>
+
+      <ion-item>
+          <ion-label floating text-right>العنوان</ion-label>
+          <ion-input type="text" [(ngModel)]="neworderdelivery.Address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating text-right>رقم تليفون</ion-label>
+        <ion-input type="text" [(ngModel)]="neworderdelivery.PhoneNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating text-right>اقرب محطة مترو ** عادة يتم التسليم بها</ion-label>
+          <ion-input type="text" [(ngModel)]="neworderdelivery.MetroStation"></ion-input>
+      </ion-item>
+
+</ion-content>
+
+<!--********************* footer buttons *****************************-->
+<ion-footer>
+  <ion-row>
+    <ion-col col-6>
+      <button ion-button block outline color="danger" (click)="cansel()">
+        <ion-icon name="md-remove-circle">الغاء</ion-icon>
+        
+      </button>
+    </ion-col>
+    <ion-col col-6>
+        <button ion-button block color="menubarr" (click)="alert_to_valid()">
+            <ion-icon name="md-done-all"> تم</ion-icon>
+            
+          </button>
+      </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,67 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="navbar">
+        <ion-title>My Baby</ion-title>
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="background" > 
+  <ion-item class="input">
+    <ion-label floating stacked class="align" style="text-align: right;">الاسم الاول</ion-label>
+    <ion-input type="text" #first></ion-input>
+  </ion-item>
+
+  <ion-item class="input">
+    <ion-label floating stacked class="align" style="text-align: right; " >الاسم الثاني</ion-label>
+    <ion-input type="text" #last></ion-input>
+  </ion-item>
+
+  <ion-item class="input">
+    <ion-label floating stacked class="align" style="text-align: right; ">البريد الاكتروني ** يستخدم لتسجيل الدخول</ion-label>
+    <ion-input type="text"  #email></ion-input>
+  </ion-item>
+
+  <ion-item class="input">
+    <ion-label floating stacked class="align" style="text-align: right; ">رفم الهاتف</ion-label>
+    <ion-input type="text" #phone></ion-input>
+  </ion-item>
+
+  <ion-item class="input">
+    <ion-label floating stacked class="align" style="text-align: right; ">اسم المستخدم ** يستخدم لتسجيل الدخول</ion-label>
+    <ion-input type="text" #user></ion-input>
+  </ion-item>
+
+  <ion-item class="input">
+    <ion-label floating stacked class="align" style="text-align: right; ">كلمة السر</ion-label>
+    <ion-input type="password" #password></ion-input>
+  </ion-item>
+
+  <ion-item class="input">
+    <ion-label floating stacked class="align" style="text-align: right; ">تأكيد كلمة السر</ion-label>
+    <ion-input type="password" #repass></ion-input>
+  </ion-item>
+
+
+<br>
+
+  <ion-row>
+      <ion-col text-center>
+    <button ion-button  color="purple" (click)="addnewvisitor(first.value, last.value, user.value, email.value, phone.value ,password.value ,repass.value)">
+        <ion-icon name="md-checkmark-circle" item-start> اضافة حساب</ion-icon>
+    </button></ion-col>
+  </ion-row>
+<ion-row>
+    <ion-col text-center>
+        <button ion-button  color="pink" clear (click)="goToLogin()">
+            <ion-icon name="ios-bulb" item-start> لديك حساب</ion-icon>
+        </button>
+    </ion-col>
+</ion-row>
+<br>
+</ion-content>

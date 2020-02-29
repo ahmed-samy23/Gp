@@ -1,0 +1,81 @@
+<!--
+  Generated template for the OpeningslidesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+  <ion-navbar color="navbar">
+    <ion-title>My Baby</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page-openingslides" style="background-image: url(assets/imgs/background.jpg)">
+
+  <ion-slides pager>
+    <ion-slide style="margin-top: 5%">
+      <img src="assets/imgs/hi.png" class="slide-image imgcyrcle" />
+      <h2 class="slide-title">!!مرحبا بكم</h2>
+      <p>
+         سعدنا بتشريفكم لنا My Baby اهلا بكم معنا فى تطبيق
+         ونتمنى ان نقدم لكم اقصى استفاده ومساعد ممكنه 
+        </p>
+      <ion-buttons center>
+        <button ion-button color="menubarr" (click)="getstart()">تخـطى</button>
+      </ion-buttons>
+    </ion-slide>
+
+    <ion-slide style="margin-top: 5%">
+        <img src="assets/imgs/mybaby.png" class="slide-image imgtraingel" />
+        <h2 class="slide-title">؟ My Baby ماهو </h2>
+        <p>
+           هو تطبيق يساعد الاباء فى المتابعه الصحيه لاطفالهم خصوصا اول طفل لهم (حتى سن 5 سنوات)..
+             ومواعيد التطعيمات واهمية كل منها واماكنها...
+             ويهتم بالامراض الشائعه...وايضا الخطيره التى لا ينتبه لها الاباء مثل التوحد ومشاكل التخاطب 
+          
+        </p>
+        <ion-buttons center>
+          <button ion-button color="menubarr" (click)="getstart()">تخـطى</button>
+        </ion-buttons>
+      </ion-slide>
+
+      <ion-slide style="margin-top: 5%">
+          <img src="assets/imgs/mybaby.png" class="slide-image imgtraingel" />
+          <h2 class="slide-title">!ماذا ايضا ؟ </h2>
+          <p>
+              يوفر لكم بعض المنتجات الخاصه بالاطفال... والتواصل السريع مع بعض الاطباء لمساعدتكم
+              وايضا المساعده فى ايجاد اماكن خاصة بالمستشفيات والحضانات لحدثى الولاده وحضانات تعليميه ومنتزهات وغيرها
+          </p>
+          <ion-buttons center>
+            <button ion-button color="menubarr" (click)="getstart()">تخـطى</button>
+          </ion-buttons>
+        </ion-slide>
+
+    <ion-slide style="margin-top: 5%">
+      <img src="assets/imgs/web.png" class="slide-image imgtraingel"/>
+      <h2 class="slide-title">موقعنا الاساسى</h2>
+      <p>
+          هذا التطبيق هو امتداد لموقعنا الاصلى عبر شبكه الانترنت 
+          ...ولمزيد من الالعاب المتوفره والاستفاده منها يرجى زيارتكم له من خلال اللينك الاتى
+          <a href="">www.mybaby.com</a> 
+      </p>
+
+
+      <ion-buttons center>
+          <button ion-button color="menubarr" (click)="getstart()">تخـطى</button>
+        </ion-buttons>
+    </ion-slide>
+
+    <ion-slide style="margin-top: 15%">
+      <img src="assets/imgs/go.png" class="slide-image imgcyrcle"/>
+      <h2 class="slide-title">!هل انت جاهز؟</h2>
+
+      <button ion-button large clear icon-end color="primary" (click)="getstart()">
+        هيا نبدأ
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+      
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

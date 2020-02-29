@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ChildstoriesreadingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar" >
+    <ion-title>قصص قرأت للطفل / {{mychild.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  class="background">
+    <h5 text-center style="margin-top: 50%" *ngIf="!found"><b><u> ... لم تقمى بقرءاة اى قصص لطفلك حتى الان</u></b></h5>
+  <div *ngIf="found">
+    <ion-card style="margin-top: 5%;background-color: antiquewhite;" *ngFor="let story of mystories">
+        <ion-card-content>
+          <ion-card-title text-center style="color: darkgoldenrod;">
+            {{story.title}}
+          </ion-card-title>
+          <p text-center>
+              {{story.descriptin}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,131 @@
+<!--
+  Generated template for the ProfileUserModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  color="menubarr">
+    <ion-title>الصفحة الشخصية</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="dismiss()">
+          <ion-icon name="md-close"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+  <ion-list *ngIf='statu' style="margin-top: 23%">
+    <ion-item>
+        <h2 item-end>{{getdata.first_name}} {{getdata.last_name}}</h2>
+      <ion-avatar item-end>
+          <!--<img src="assets/imgs/{{getdata.photo}}">-->
+        <img src="assets/imgs/defult.jpg">
+      </ion-avatar>
+    </ion-item>
+<!--<ion-item *ngFor="let element of list">-->
+    <ion-item>
+        {{getdata.first_name}}
+          <ion-note item-end>
+              الاسم الاول
+          </ion-note>
+        </ion-item>
+    
+        <ion-item>
+            {{getdata.last_name}}
+          <ion-note item-end>
+              الاسم الاخير
+              </ion-note>
+        </ion-item>
+
+        <ion-item>
+            {{getdata.email}}
+        <ion-note item-end>
+          البريد الاكتروني
+            </ion-note>
+      </ion-item>
+
+      <ion-item>
+          {{getdata.phone}}
+      <ion-note item-end>
+        رفم الهاتف
+          </ion-note>
+    </ion-item>
+
+
+    
+<!--
+  if this is doctor
+-->
+  </ion-list>
+  <ion-list *ngIf='!statu' style="margin-top: 23%">
+    <ion-item>
+        <h2 item-end>د/ {{getdata.first_name}} {{getdata.last_name}}</h2>
+      <ion-avatar item-end>
+          <!--<img src="assets/imgs/{{getdata.photo}}">-->
+        <img src="assets/imgs/defult.jpg">
+      </ion-avatar>
+    </ion-item>
+<!--<ion-item *ngFor="let element of list">-->
+    <ion-item>
+        {{getdata.first_name}}
+          <ion-note item-end>
+              الاسم الاول
+          </ion-note>
+        </ion-item>
+    
+        <ion-item>
+            {{getdata.last_name}}
+          <ion-note item-end>
+              الاسم الاخير
+              </ion-note>
+        </ion-item>
+
+        <ion-item>
+            {{getdata.e_mail}}
+        <ion-note item-end>
+          البريد الاكتروني
+            </ion-note>
+      </ion-item>
+
+      <ion-item>
+          {{getdata.phone}}
+      <ion-note item-end>
+        رفم الهاتف
+          </ion-note>
+    </ion-item>
+
+    <ion-item>
+      {{getdata.specification}}
+    <ion-note item-end>
+      التخصـص
+        </ion-note>
+  </ion-item>
+
+  <ion-item>
+    {{getdata.year_Experience}}
+  <ion-note item-end>
+    عدد سنوات الخبره
+      </ion-note>
+</ion-item>
+  
+    <ion-item>
+      <a href="{{linkclinic}}">اضغط هنا لتحديد الموقع</a>
+    <ion-note item-end>
+      العيادة الخاصة
+        </ion-note>
+  </ion-item>
+  
+  <ion-item>
+      0225533698
+    <ion-note item-end>
+       رقم العيادة الخاصة
+        </ion-note>
+  </ion-item>
+
+    </ion-list>
+</ion-content>

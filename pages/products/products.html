@@ -1,0 +1,84 @@
+<!--
+  Generated template for the EditmyprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="navbar">
+        <ion-title>المنتجـــات</ion-title>
+        <ion-buttons end>
+                <button ion-button icon-only (click)="menubutton()">
+                  <ion-icon name="menu"></ion-icon>
+                </button>
+                  <!--<button ion-button icon-only>
+                      <ion-icon name="add"></ion-icon>
+                    </button>-->
+              </ion-buttons>
+        </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding class="background">
+        <ion-item>
+            <h2 item-end><b><u>.. انقر هنا لمزيد من الارشادات الهامة</u></b></h2>
+                <ion-buttons start>
+                    <button ion-button icon-only outline style="background-color: lightyellow" round (click)="alertinfo()">
+                        <ion-icon name="md-information-circle"></ion-icon>
+                    </button>
+                </ion-buttons>
+        </ion-item>
+
+        <ion-card class="container" *ngFor="let pro of allproducts; let i= index;" (click)="openOptions(pro,i)">
+            <img src="assets/imgs{{pro.photo}}" class="imgsize"/>
+            <div class="middle">
+                    <div class="text">{{pro.name}}</div>
+                  </div>
+                  <ion-row>
+                      <ion-col text-center>
+                          <button block ion-button icon-only clear>
+                          <ion-icon name="more"></ion-icon>
+                        </button>
+                      </ion-col>
+                  </ion-row>
+          </ion-card>
+
+   <!-- <ion-card class="container" (click)="openOptions()">
+        <img src="assets/imgs/p1.jpg" class="imgsize"/>
+        <div class="middle">
+                <div class="text">دبدوب صغير</div>
+              </div>
+              <ion-row>
+                  <ion-col text-center>
+                      <button block ion-button icon-only clear>
+                      <ion-icon name="more"></ion-icon>
+                    </button>
+                  </ion-col>
+              </ion-row>
+      </ion-card>
+    
+      <ion-card class="container" (click)="openOptions()">
+            <img src="assets/imgs/p2.jpg" class="imgsize"/>
+            <div class="middle">
+                    <div class="text">دبدوب صغير</div>
+                  </div>
+                  <ion-row>
+                      <ion-col text-center>
+                          <button block ion-button icon-only clear>
+                          <ion-icon name="more"></ion-icon>
+                        </button>
+                      </ion-col>
+                  </ion-row>
+          </ion-card>-->
+</ion-content>
+
+<ion-footer>
+    <button ion-button round block color="menubarr" (click)="openorderdetails()" [disabled]="disable">
+        <ion-icon name="md-trending-up" >
+                التــالى
+            </ion-icon>
+    </button>
+</ion-footer>

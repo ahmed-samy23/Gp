@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="navbar" >
+      <ion-title *ngIf="!doc">{{person.first_name}} {{person.last_name}}</ion-title>
+      <ion-title *ngIf="doc">د/ {{person.first_name}} {{person.last_name}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content padding style="background-image: url(assets/imgs/background.jpg)">
+  <h5 text-center style="margin-top: 50%" *ngIf="!status"><b><u> ... لم تقم بعد ببدأ المحادثة حتى الان</u></b></h5>
+  <div style="width: 100%;background-color: white"  *ngIf="status"><h5 text-center><b><u> يمكنك حذف رسايلك فقط من خلال الضغط عليها</u></b></h5></div>
+  <div *ngIf="status">
+   <ion-buttons *ngFor="let m of ourmessages">
+      <button ion-button round *ngIf="!m.i"> 
+        {{m.m.message1}}
+      </button>
+      <ion-buttons end *ngIf="m.i">
+      <button ion-button color="mymass" round end (click)="alert_deletemessage(m.m)">{{m.m.message1}}</button>
+    </ion-buttons>
+   </ion-buttons>
+  </div>
+
+</ion-content>
+
+<ion-footer color="secondary">
+  <ion-toolbar>
+      <ion-buttons end>
+          <button ion-button icon-left icon-only (click)="sendmessage()">
+            <ion-icon name="send"></ion-icon>
+          </button>
+        </ion-buttons>
+      <ion-item id="rounded">
+          <ion-input type="text" placeholder="... ارسال رسالة" text-right [(ngModel)]="newmess.message1"></ion-input>
+        </ion-item>
+    
+  </ion-toolbar>
+</ion-footer>

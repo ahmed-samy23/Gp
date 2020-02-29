@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-title>My Baby</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="background" overflow-scroll="false">
+  <div class="form">
+    <ion-item class="input">
+      <ion-label floating style="text-align: right;">-: اسم المستخدم</ion-label>
+      <ion-input type="text" #username></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item class="input">
+      <ion-label floating style="text-align: right;">
+        -: كلمة السر
+      </ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+
+    <br>
+      <ion-row>
+        
+        <ion-col col-6>
+            <button ion-button color="purple" outline block (click)="goToRegister()">
+                <ion-icon name="md-add-circle" item-start> حساب جدبد</ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-6>
+            <button ion-button color="purple" block (click)="login(username.value , password.value)">
+                <ion-icon name="person" item-start> تسجيل الدخول</ion-icon>
+            </button>
+          </ion-col>
+      </ion-row>
+  </div>
+</ion-content>

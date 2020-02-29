@@ -1,0 +1,83 @@
+<!--
+  Generated template for the PlacesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  color="navbar">
+    <ion-title>الامــاكن</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+
+<ion-list  *ngIf="ifclinic">
+    <h5 text-center><b><u>يمكنك البحث عن طريق اختيار المحافظه ومن ثم ادخال المنطقة</u></b></h5>
+    <ion-item>
+        <ion-label text-right>المحافظة</ion-label>
+        <!--
+        <ion-select [(ngModel)]="select1" multiple="false">-->
+        <ion-select [(ngModel)]="select1" multiple="false" item-start (ionChange)="filterclinics($event)">
+          <ion-option name="cairo" value="القاهرة">القاهرة</ion-option>
+          <ion-option name="giza" value="الجيزة">الجيزة</ion-option>
+          <ion-option name="giza" value="اخرى">اخرى</ion-option>
+          <ion-option name="all" value="all" selected>الجميـع</ion-option>
+    
+        </ion-select>
+      </ion-item>
+    
+      <ion-item>
+        <ion-searchbar [(ngModel)]="select2" (ionInput)="filterclinics($event)"></ion-searchbar>
+      </ion-item>
+
+  <ion-card text-right *ngFor="let c of search_showcliniclist">
+    <ion-card-header>
+      عيادة د /<a (click)="presentModal(c.d , 1)">{{c.d.first_name}} {{c.d.last_name}}</a>
+      <p> تخصـص {{c.d.specification}}</p>
+    </ion-card-header>
+    <ion-card-content>
+      {{c.c.address}} - {{c.c.city}} - {{c.c.govern}}
+      <br>
+      <a href="{{c.c.location}}"> الموقع بالتحديد </a>
+      {{c.c.phone}}
+      <br>
+    <!--  <iframe style="width:100%; border: none" [src]="c.c.location"></iframe>-->
+    </ion-card-content>
+  </ion-card>
+</ion-list>
+ <!-- ============== place 3ady =========================-->
+<ion-list  *ngIf="!ifclinic">
+    <h5 text-center><b><u>يمكنك البحث عن طريق اختيار المحافظه ومن ثم ادخال المنطقة</u></b></h5>
+    <ion-item>
+        <ion-label text-right>المحافظة</ion-label>
+        <!--
+        <ion-select [(ngModel)]="select1" multiple="false">-->
+        <ion-select [(ngModel)]="select1" multiple="false" item-start (ionChange)="filterplaces($event)">
+          <ion-option name="cairo" value="القاهرة">القاهرة</ion-option>
+          <ion-option name="giza" value="الجيزة">الجيزة</ion-option>
+          <ion-option name="all" value="all" selected>الاتنان</ion-option>
+    
+        </ion-select>
+      </ion-item>
+    
+      <ion-item>
+        <ion-searchbar [(ngModel)]="select2" (ionChange)="filterplaces($event)"></ion-searchbar>
+      </ion-item>
+
+  <ion-card text-right *ngFor="let p of search_showplaceslist">
+    <ion-card-header>
+      {{p.name}}
+    </ion-card-header>
+    <ion-card-content>
+      {{p.address}} 
+      <a href="{{p.location}}"> الموقع بالتحديد </a>
+      <br>
+      {{p.phone}}
+    </ion-card-content>
+    </ion-card>
+</ion-list>
+</ion-content>

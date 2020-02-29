@@ -1,0 +1,26 @@
+<!--
+  Generated template for the ListArticlePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>مقالات د/ {{doc.first_name}} {{doc.last_name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+<h2 style="text-align:center">قم باختيار عنوان المقالة التى تريد قراءتهـا </h2>
+<br><br>
+      <button ion-item style="text-align:right;" *ngFor="let one of art" (click)="gotoarticle(one)">
+          <h2 >{{one.title}}</h2>
+      </button>
+
+  
+  
+    
+    </ion-content>

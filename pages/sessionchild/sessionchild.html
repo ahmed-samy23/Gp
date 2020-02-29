@@ -1,0 +1,25 @@
+<!--
+  Generated template for the SessionchildPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>اختر الطفل</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+    <h5 text-center style="margin-top: 70%" *ngIf="!statu"><b><u> لم تقم باضافة اطفال ......للاضافة اذهب الي صفحة اطفالي </u></b></h5>
+    <h5 text-center style="margin-top: 15%; color: chocolate ; background-color:aliceblue;" *ngIf="statu"><b><u> من فضلك اختر الطفل الذى تريد قراءة او استماع القصة له </u></b></h5>
+    <ion-list *ngIf="statu">
+        <ion-item *ngFor="let c of mychildrenlist" (click)="readstory(c)">
+          <h2 text-right>{{c.name}}</h2>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

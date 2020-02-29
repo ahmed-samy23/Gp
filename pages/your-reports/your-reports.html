@@ -1,0 +1,41 @@
+<!--
+  Generated template for the YourReportsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>البلاغات التى قمت بتقديمها</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background" center text-right>
+    <h5 text-center style="margin-top: 40%" *ngIf="!status"><b><u> ... لم تقم بعمل اى ابلاغات فى احد حتى الان</u></b></h5>
+  <div *ngIf="status">
+  <ion-card *ngFor="let c of reportName">
+      <ion-card-content>
+        <p style="background-color: palevioletred">
+          <ion-grid>
+              <ion-row>
+                  <ion-col col-12 style="font-weight: bold;"><h2 style="color: black"><b>اسم المبلغ عنه</b></h2></ion-col>
+                  <ion-col col-12 text-center style="color: floralwhite;">{{c.fName}} {{c.lName}}</ion-col>
+                </ion-row>
+            <ion-row>
+              <ion-col col-12 style="font-weight: bold;"><h2 style="color: black"><b> البلاغ المقدم</b></h2></ion-col>
+              <ion-col col-12 text-center style="color: floralwhite;">{{c.r.Massage}}</ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-12 style="font-weight: bold;"><h2 style="color: black"><b>رد المسئول</b></h2></ion-col>
+              <ion-col col-12 text-center style="color: floralwhite;">{{c.r.Repleyfrom}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

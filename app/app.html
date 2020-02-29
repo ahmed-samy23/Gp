@@ -1,0 +1,24 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="menubarr">
+            <ion-title>
+                القــائمة
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <button menu-close *ngFor="let p of pages" ion-item [class.activeHighlight]="chickactivepage(p)" (click)="openPage(p)">
+                    <ion-icon [name]="p.icon" item-left [color]="p.color"></ion-icon>
+                {{p.title}}
+            </button>
+            <button menu-close ion-item (click)="logout()">
+                <ion-icon name="exit" item-left color="menubarr" ></ion-icon>
+                تسجيل خروج
+        </button>
+        </ion-list>
+        
+    </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>

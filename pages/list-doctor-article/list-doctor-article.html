@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ListDoctorArticlePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>مقالات الدكاترة </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="menubutton()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        <!--<button ion-button icon-only>
+            <ion-icon name="add"></ion-icon>
+          </button>-->
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+<h3  style="text-align:center;">يوجد هنا مجموعه من المقالات قام بكتابتها اطبائنا لتوعية الاباء من بعض الامور الهامة واخر تحديث فى عالم الطب </h3>
+<br>   
+
+<button color="darkgray" ion-item style="text-align:right;" *ngFor="let one of allarticlecat"  (click)="gotodoctorlist(one)">
+      <h2 >{{one.name}}</h2>
+  </button>
+
+
+  <!--
+  <button  color="purple" ion-item style="text-align:right;">
+    <h2>الالتهابات عند الاطفال</h2> 
+  </button>-->
+  
+
+
+
+</ion-content>

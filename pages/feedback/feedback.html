@@ -1,0 +1,52 @@
+<!--
+  Generated template for the FeedbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>الملاحظــات والشكاوى</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="menubutton()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        <!--<button ion-button icon-only>
+            <ion-icon name="add"></ion-icon>
+          </button>-->
+    </ion-buttons>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-image: url(assets/imgs/background.jpg)">
+
+  <ion-list style="margin-top: 20%">
+      <ion-item>
+          <ion-label floating text-right>-: الشكوى/ الملاحظـة عن</ion-label>
+          <ion-input type="text" [(ngModel)]='newfeedback.title'></ion-input>>
+        </ion-item>
+    </ion-list>
+  <ion-list>
+    <ion-item>
+        <ion-label floating text-right>-: مضمـــونها</ion-label>
+        <ion-textarea type="text" [(ngModel)]='newfeedback.feedback1'></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <p text-center>نامل دايما ان نكون عند حسن ظنكم بنا..لذلك يسعدنا متابعتكم معنا واعطاءنا اى مقترحات لنكون دايما افضل..ومعرفة الشكاوى والملاحظــات للمساعدة</p>
+      <p text-center>ولاننا غرضنا مساعدتكم وخدمتكم فقط..الشكاوى والملاحظات لا يتم حفظ اى بيانات عن مرسلها..وان كانت الشكوى تستلزم التواصل معك فبرجاء ذكر بياناتك مع مضمونها للتواصل فيما بعض </p>
+    </ion-row>
+    <ion-row>
+      <ion-col item-center>
+          <button ion-button block round>
+          <ion-icon name="ios-bug" (click)="sendfeedback()">
+              أرســـال
+          </ion-icon>
+          </button>
+      </ion-col>
+      </ion-row>
+</ion-content>

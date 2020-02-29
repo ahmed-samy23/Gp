@@ -1,0 +1,77 @@
+<!--
+  Generated template for the StoriesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="navbar">
+        <ion-title>القصــص</ion-title>
+        <ion-buttons end>
+          <button ion-button icon-only (click)="menubutton()">
+            <ion-icon name="menu"></ion-icon>
+          </button>
+            <!--<button ion-button icon-only>
+                <ion-icon name="add"></ion-icon>
+              </button>-->
+        </ion-buttons>
+        
+      </ion-navbar>
+      
+</ion-header>
+
+
+<ion-content padding class="background">
+  <ion-searchbar (ionInput)="getItemsofstories($event)"></ion-searchbar>
+    <ion-card style="margin-top: 5%;background-color: antiquewhite;" *ngFor="let story of searchliststories">
+        <ion-card-content>
+          <ion-card-title text-center style="color: darkgoldenrod;">
+            {{story.s.title}}
+          </ion-card-title>
+          <p text-center>
+            {{story.s.descriptin}}
+          </p>
+        </ion-card-content>
+        <ion-item style="background-color: antiquewhite;">
+            <h4 text-right>عدد المشاهدات</h4>
+          <ion-icon name='md-stats' item-end style="color: #55acee"></ion-icon>
+          <ion-badge item-start>{{story.r.length}}</ion-badge>
+        </ion-item>
+        <button ion-button clear block (click)="choosechild(story.s , story.r)"  style="color: darkgoldenrod;">
+          للقراءة والاستماع
+        </button>
+        <!--
+        <audio controls>
+            <source src="assets/imgs/Lesa_Fe_Amal_Melody4Arab.mp3" type="audio/mp3">
+            <source src="assets/imgs/Lesa_Fe_Amal_Melody4Arab.mp3" type="audio/ogg">
+          </audio>-->
+    </ion-card>
+
+<!--
+    <ion-card style="margin-top: 5%">
+
+        <video width="300" controls>
+            <source src="assets/imgs/Arabs _Got_Talent.mp4" type="video/mp4">
+            <source src="assets/imgs/Arabs _Got_Talent.mp4" type="video/ogg">
+            </video>
+        <ion-card-content>
+          <ion-card-title text-right>
+            سندريــلا
+          </ion-card-title>
+          <p text-center>
+            تدور احداث الفصه حول اميره جميله الكل يحبها ويحب والدها الامير وتخوض مغامرات ضيقة..القصه مناسبه للاطفال حتى سن 3 سنوات
+          <br>
+            <button ion-button clear small (click)="choosechild()">
+            اقرأ وستمع الان
+            </button>
+          </p>
+        </ion-card-content>
+        <ion-item>
+            <h4 text-right>عدد المشاهدات</h4>
+          <ion-icon name='md-stats' item-end style="color: #55acee"></ion-icon>
+          <ion-badge item-start>260k</ion-badge>
+        </ion-item>
+    </ion-card>-->
+  
+</ion-content>

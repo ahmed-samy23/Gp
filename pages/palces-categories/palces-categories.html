@@ -1,0 +1,40 @@
+<!--
+  Generated template for the PalcesCategoriesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>تصنيفــات الاماكــن</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="menubutton()">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+          <!--<button ion-button icon-only>
+              <ion-icon name="add"></ion-icon>
+            </button>-->
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="background">
+
+
+  <ion-card class="card">
+
+    <!--<a href="https://www.google.com/maps/place/%D8%A8%D9%83%D9%8A%D9%86%E2%80%AD/@30.1017694,31.3487082,17z/data=!3m1!4b1!4m5!3m4!1s0x14583e26ffffffff:0xcdcb6b5b1311f26d!8m2!3d30.1017694!4d31.3465195">click here</a>
+    -->
+    <ion-list>
+
+      <button ion-item (click)="goToPlaces(p.id)" *ngFor="let p of placescategorylist">
+        <ion-icon [name]="p.iconName" item-start  [color] = "p.iconColor"></ion-icon>
+        {{p.name}}
+      </button>
+
+    </ion-list>
+  </ion-card>
+
+</ion-content>

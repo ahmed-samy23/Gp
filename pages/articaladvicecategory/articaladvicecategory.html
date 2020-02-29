@@ -1,0 +1,61 @@
+<!--
+  Generated template for the ArticaladvicecategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>مقالات ونصايـح عامــة</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="menubutton()">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+          <!--<button ion-button icon-only>
+              <ion-icon name="add"></ion-icon>
+            </button>-->
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+    <button ion-item style="text-align:right;margin-top: 5%" (click)="gotoarticle('التلعثم','التلعثم والتأتأه لدى الاطفال')">
+        <h2>التلعثم ( التأتأة ) في الكلام عند الأطفال</h2>
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('التوحد','التوحد لدى الاطفال')">
+      <h2>مرض التوحد لدى الاطفال</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('السمع','ضعـف السمع لدى الاطفال')">
+        <h2>متى تقلقي حيال إصابة طفلك بمشكلة في أذنه؟</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('التخاطب','تأخر الكلام عند الأطفال')">
+        <h2>تأخر الكلام عند الأطفال</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('الحضانة','كيف تختارين الحضانة التعليمية؟')">
+        <h2>كيف أختار الحضانة التعليمية المناسبة لطفلي؟</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('التغذية','انظمة التغذية وجدول خاص بها')">
+        <h2>انظمة التغذية للاطفال حديثى الولادة حتى الفطامه</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('البرد','حلول منزلية لعلاج البرد')">
+        <h2>عشر حلول منزلية لعلاج طفلك من البرد</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('امراض','أشهر الأمراض للرضع')">
+        <h2>أشهر الأمراض لدى الرضع في أول ٣ شهور</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('اعراض','إيجابيات وسلبيات الكرتون')">
+        <h2>أعراض يجب ألا تتجاهليها لحديثى الولادة</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('الصفراء','مرض الصفراء واسبابها وعلاجها')">
+        <h2>مرض الصفراء واسبابها وعلاجها؟</h2> 
+    </button>
+    <button ion-item style="text-align:right;" (click)="gotoarticle('الموبايل','خطر الموبايل على الأطفال')">
+            <h2>كل شئ عن خطر الموبايل على الأطفال</h2> 
+        </button>
+        <button ion-item style="text-align:right;" (click)="gotoarticle('الكرتون','إيجابيات وسلبيات الكرتون')">
+                <h2>إيجابيات وسلبيات الكرتون على الطفل</h2> 
+            </button>
+</ion-content>

@@ -1,0 +1,55 @@
+page-openingslides {
+
+    
+  .toolbar-background {
+    background: #fff;
+    border-color: transparent;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: 2.8rem;
+  }
+
+  .slide-image {
+    max-height: 50%;
+    max-width: 60%;
+    margin: 18px 0;
+  }
+
+  .imgtraingel{
+      //border-radius: 50%; cyrcle
+    border-radius: 8px;
+    width: 500px;
+    height: 150px;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+  .imgcyrcle{
+    border-radius: 50%;
+    width: 500px;
+    height: 150px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #60646B;
+
+    b {
+      color: #000000;
+ }
+  }
+
+}

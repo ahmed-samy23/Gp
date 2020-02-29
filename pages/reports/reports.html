@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>أنواع البلاغات</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="menubutton()">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+          <!--<button ion-button icon-only>
+              <ion-icon name="add"></ion-icon>
+            </button>-->
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background" center text-right>
+
+  <ion-card style="margin-top: 45%"  (click)="yourReports()">
+    <ion-card-content>
+      <ion-card-title  text-center style="background-color: antiquewhite;">
+        بلاغات قد قمت بتقديمها
+        <ion-icon name="md-arrow-dropup-circle" item-left></ion-icon>
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="ReportsAboutYou()" >
+      <ion-card-content>
+        <ion-card-title text-center style="background-color: antiquewhite;">
+          بلاغات قد تم تقديمها عنك
+          <ion-icon name="md-arrow-dropdown-circle" item-left></ion-icon>
+        </ion-card-title>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

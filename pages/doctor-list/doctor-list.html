@@ -1,0 +1,40 @@
+<!--
+  Generated template for the DoctorListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>اطبائنـا</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background" >
+    <h5 text-center style="margin-top: 50%" *ngIf="!status"><b><u> لم يتم اضافة اى مقالات فى هذا المجال حتى الان</u></b></h5>
+ <h2 style="text-align:center;" *ngIf="status">قم باختيار الطبيب </h2> 
+  <br *ngIf="status">
+  <div  *ngIf="status">
+  <button ion-item style="text-align:right;" *ngFor="let one of artlist2"  (click)="gotoarticle(one.d,one.a)">
+    <ion-avatar item-end >
+      <img  src="../assets/imgs/defult.jpg">
+    </ion-avatar>
+    <h2> د/ {{one.d.first_name}} {{one.d.last_name}}</h2>
+</button>
+</div>
+<!--<button color="purple"  ion-item style="text-align:right;">
+  <ion-avatar item-end >
+    <img  src="../assets/imgs/background2.jpg">
+  </ion-avatar>
+  <h2>د/ابراهيم عصام  </h2>
+</button>
+<button  color="purple" ion-item style="text-align:right;">
+  <ion-avatar item-end >
+    <img  src="../assets/imgs/background2.jpg">
+  </ion-avatar>
+  <h2>د/ابراهيم عصام  </h2>
+</button>-->
+</ion-content>

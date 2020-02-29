@@ -1,0 +1,122 @@
+<!--
+  Generated template for the ModalchiledinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+      <ion-navbar color="navbar" >
+        <ion-title>بيانات طفــلى</ion-title>
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+  <ion-item>
+    <ion-row >
+      <ion-col col-6>  
+        <h3 text-right>{{mychild.name}}</h3>
+      </ion-col>
+      <ion-col col-6 >  
+        <h2 text-right><b>الاســم</b></h2>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+<ion-item >
+  <ion-row >
+  <ion-col col-6> 
+      <h5 text-right>{{b.toDateString()}}</h5> 
+      <h5 text-right>{{b.getDate()}} / {{b.getMonth()+1}} / {{b.getFullYear()}}</h5>
+    </ion-col>
+<ion-col col-6 >  
+  <h2 text-right><b>تاريخ الميلاد</b></h2>
+</ion-col>
+</ion-row>
+</ion-item>
+
+<ion-item *ngFor="let one of gradeslist">
+    <ion-row>
+    <ion-col col-6>  
+        <h5 text-right> {{one.m.percentage}}% </h5>
+        <button start ion-button block clear small (click)="shownotealert(one.m.notes)"> ملاحظتنا
+        </button>
+      </ion-col>
+    <ion-col col-6 (click)="GoToTest(one.t.id)">  
+    <h2 text-right><b> اختبار {{one.t.name}}</b></h2>
+    </ion-col>
+    </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col  (click)="GoToMyVacc()">
+          <h2 text-center><b>مواعيد تطعيماتـه </b></h2>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+        <ion-row>
+          <ion-col  (click)="GoToMystories()">
+            <h2 text-center><b>القصص التى قرأتيها له </b></h2>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+    <ion-row>
+      <ion-col text-center>  
+          <button ion-button outline color="danger" (click)="alert_test()">
+              <ion-icon name="ios-repeat"> اعادة الاختبارات</ion-icon>
+            </button>
+      </ion-col>
+      
+      </ion-row>
+    <!--
+<ion-content padding class="background">
+  <ion-item style="margin-top: 10%">
+    <ion-row >
+      <ion-col col-6>  
+        <h5 text-right>ابراهيم عصام</h5>
+      </ion-col>
+      <ion-col col-6 >  
+        <h2 text-right><b>الاســم</b></h2>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+<ion-item >
+  <ion-row >
+  <ion-col col-6>  
+      <h5 text-right>14/6/1996</h5>
+    </ion-col>
+<ion-col col-6 >  
+  <h2 text-right><b>تاريخ الميلاد</b></h2>
+</ion-col>
+</ion-row>
+</ion-item>
+<ion-item (click)="GoToTest('autim')">
+<ion-row >
+<ion-col col-6>  
+    <h5 text-right> 6/10</h5>
+  </ion-col>
+<ion-col col-6 >  
+<h2 text-right><b>نتيجة اختبار التوحد </b></h2>
+</ion-col>
+</ion-row>
+</ion-item>
+
+<ion-item (click)="GoToTest('communication')">
+<ion-row>
+<ion-col col-6>  
+    <h5 text-right > 4/10</h5>
+  </ion-col>
+<ion-col col-6 >  
+<h2 text-right><b>نتيجة اختبار التخاطب </b></h2>
+</ion-col>
+</ion-row>
+</ion-item>
+-->
+</ion-content>

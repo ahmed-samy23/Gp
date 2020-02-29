@@ -1,0 +1,77 @@
+<!--
+  Generated template for the ChatListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>المحادثــات</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="menubutton()">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+          <!--<button ion-button icon-only>
+              <ion-icon name="add"></ion-icon>
+            </button>-->
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+  <h5 text-center style="margin-top: 50%" *ngIf="!status"><b><u> ... لم تقم بعد ببدأ محادثات مع احد حتى الان</u></b></h5>
+  <h5 text-center style="margin-top: 10%;background-color:aliceblue;" *ngIf="status"><b><u>المستخدم الذى يتم عمل بلوك له لا يتم عرض محادثاتة</u></b></h5>
+  <div *ngIf="status">
+    <ion-list>
+        <button ion-item style="text-align:right;" (click)="gotomessagepage(chat.p,chat.ty)" *ngFor="let chat of userchatlist3">
+          <ion-avatar item-end >
+            <img  src="../assets/imgs/defult.jpg">
+          </ion-avatar>
+          <h2 *ngIf="chat.v">{{chat.p.first_name}} {{chat.p.last_name}}</h2>
+          <h2 *ngIf="!chat.v">د/ {{chat.p.first_name}} {{chat.p.last_name}}</h2>
+          <p>{{chat.mess}}</p>
+        </button>
+<!--
+        <button ion-item style="text-align:right;" navPush='MassegePage'>
+            <ion-avatar item-end >
+              <img  src="../assets/imgs/images.jpg">
+            </ion-avatar>
+            <h2>ايمان محمد</h2>
+            <p>تمام هروح للدكتور وهاجى اقولك</p>
+            <p>تمام ربنا يشفيه</p>
+        </button>
+
+          <button ion-item style="text-align:right;" navPush='MassegePage'>
+              <ion-avatar item-end >
+                <img  src="../assets/imgs/s-l300.jpg">
+              </ion-avatar>
+              <h2>عصام محسن</h2>
+              <p>مساء الخير</p>
+              <p>عندي اسفتسار بخصوص الطقل</p>
+          </button>
+
+            <button ion-item style="text-align:right;" navPush='MassegePage'>
+                <ion-avatar item-end >
+                  <img  src="../assets/imgs/background-floral-wallpaper-iphone-wallpaper-roses-Favim.com-3169687.jpg">
+                </ion-avatar>
+                <h2>دكتور/ شادى هانى</h2>
+                <p>حضرتك متواجد فى عياتك امتى</p>
+                <p>كل ايام الاسبوع من 7م ل 11م</p>
+            </button>
+
+              <button ion-item style="text-align:right;" navPush='MassegePage'>
+                  <ion-avatar item-end >
+                    <img  src="../assets/imgs/background2.jpg">
+                  </ion-avatar>
+                  <h2>ام عبدالله</h2>
+                  <p>مساء الخير</p>
+                  <p>عندي اسفتسار بخصوص الطقل</p>
+              </button>
+
+ -->
+      </ion-list>
+</div>
+</ion-content>

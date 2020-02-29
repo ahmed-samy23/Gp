@@ -1,0 +1,163 @@
+<ion-header>
+    <ion-navbar color="navbar">
+      <ion-title>الصفحة الرئيسيــة</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="menubutton()">
+            <ion-icon name="menu"></ion-icon>
+          </button>
+            <!--<button ion-button icon-only>
+                <ion-icon name="add"></ion-icon>
+              </button>-->
+            </ion-buttons>    
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding style="background-image: url(assets/imgs/background.jpg)">
+    
+      <ion-card style="background-color: floralwhite;">
+      <br>
+        <ion-item>
+            <ion-label text-right floating color="pink">-: كتابة منشور</ion-label>
+            <ion-textarea [(ngModel)]="newpost.post1" text-right></ion-textarea>
+          </ion-item>
+          <ion-row>
+          <ion-col col-6>
+            <button ion-button block clear style="margin-left: 20px" color="pink" (click)="addnewpost()">اضافة المنشور </button>
+          </ion-col>
+          </ion-row>
+    </ion-card>
+
+      <!--<img src="assets/imgs/{{post.p.photo}}" *ngIf="post.image">-->
+
+    <div [ngSwitch]="pet">
+      <ion-list *ngSwitchCase="'all'">
+    <ion-card *ngFor="let post of postslist" style="background-color: aliceblue;">
+      <ion-item style="background-color: aliceblue;">
+          <h2 text-right *ngIf="post.v">{{post.user.first_name}} {{post.user.last_name}}</h2>
+          <h2 text-right *ngIf="!post.v">د/ {{post.user.first_name}} {{post.user.last_name}}</h2>
+        <ion-avatar item-end>
+          <img src="assets/imgs/defult.jpg">
+        </ion-avatar>
+        <p text-right>{{post.p.date.getDate()}}/{{post.p.date.getMonth()+1}}/{{post.p.date.getFullYear()}} ** {{post.p.date.toDateString()}}</p>
+      </ion-item>
+      <hr>
+      <img src="assets/imgs/{{post.p.photo}}" *ngIf="post.image">
+      <ion-card-content>
+        <br>
+        <p text-center>{{post.p.post1}}</p>
+      </ion-card-content>
+          <button ion-button center clear block color="pink" (click)="presentModal(post.p,post.com)">
+          <p> ({{post.com.length}}) </p>  التعليقات
+              <ion-icon name="text"></ion-icon>
+          </button>
+    </ion-card>
+</ion-list>
+
+<ion-list *ngSwitchCase="'myposts'">
+    <h5 text-center style="margin-top: 40%" *ngIf="!status"><b><u> ... لم تقم بعد باضافـة منشورات حتى الان</u></b></h5>
+  <div *ngIf="status">
+    <ion-card *ngFor="let post of mypostslist" style="background-color: aliceblue;">
+        <ion-item style="background-color: aliceblue;">
+          <h2 text-right>{{post.user.first_name}} {{post.user.last_name}}</h2>
+          <ion-avatar item-end>
+            <img src="assets/imgs/defult.jpg">
+          </ion-avatar>
+          <ion-avatar item-start>
+          <button ion-button icon-only clear small (click)="deleteall(post)">
+            <ion-icon name="trash" color="pink"></ion-icon>
+            </button>
+        </ion-avatar>
+          <p text-right>{{post.p.date.getDate()}}/{{post.p.date.getMonth()+1}}/{{post.p.date.getFullYear()}} ** {{post.p.date.toDateString()}}</p>
+          <!--<p text-right>{{post.p.date.getHours()}}:{{post.p.date.getMinutes()}}</p>-->
+        </ion-item>
+        <hr>
+        <img src="assets/imgs/{{post.p.photo}}" *ngIf="post.image">
+        <ion-card-content>
+          <p text-center>{{post.p.post1}}</p>
+        </ion-card-content>
+
+          <button ion-button center clear block color="pink" (click)="presentModal(post.p,post.com)">
+            <p> ({{post.com.length}}) </p>  التعليقات
+                <ion-icon name="text"></ion-icon>
+            </button>
+      </ion-card>
+    </div>
+    </ion-list>
+      </div>
+    
+  </ion-content>
+
+<!--
+    <div [ngSwitch]="pet">
+      <ion-list *ngSwitchCase="'all'">
+    <ion-card>
+      <ion-item>
+          <h2 text-right>امانى عبدالرحمن</h2>
+        <ion-avatar item-end>
+          <img src="assets/imgs/logo.png">
+        </ion-avatar>
+        <p text-right>ينا 5 ير 2018 , الساعة 1.30 م</p>
+      </ion-item>
+      <img src="assets/imgs/logo.png" *ngIf="imagestatus">
+      <ion-card-content>
+        <p text-center>ماهى المشروبات التى تساعد على هدوء معدة الاطفال والتخفيف من الام البطن المتسببه من عصر الهضم</p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col text-center>
+          <button ion-button center clear block color="pink" (click)="presentModal()">
+            <p> ({{ifdeletecom}}) </p>  التعليقات
+              <ion-icon name="text"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+</ion-list>
+
+<ion-list *ngSwitchCase="'myposts'">
+    <ion-card>
+        <ion-item>
+            <h2 text-right>ابراهيم عصام</h2>
+          <ion-avatar item-end>
+            <img src="assets/imgs/logo.png">
+          </ion-avatar>
+          <ion-avatar item-start>
+            <button ion-button icon-only clear small (click)="deleteall()">
+              <ion-icon name="trash" color="pink"></ion-icon>
+              </button>
+          </ion-avatar>
+          <p text-right>ينا 6 ير 2018 , الساعة 1.30 م</p>
+        </ion-item>
+        <img src="assets/imgs/abc.png" *ngIf="!imagestatus">
+        <ion-card-content>
+          <p text-center>عايز اعرف ايه الطرق التى استطيع من خلالها وقاية طفلى من نزلات البرد؟</p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col text-center>
+            <button ion-button center clear block color="pink" (click)="presentModal()">
+              التعليقات
+                <ion-icon name="text"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-list>
+      </div>
+  </ion-content>-->
+
+
+  <ion-footer>
+
+     <!--******************* segment *****************-->
+  <div padding style="background-color: white">
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="myposts">
+        منشوراتـى
+      </ion-segment-button>
+      <ion-segment-button value="all">
+          جميع المنشورات
+        </ion-segment-button>
+    </ion-segment>
+  </div>
+  </ion-footer>
+  
+  

@@ -1,0 +1,21 @@
+<!--
+  Generated template for the ArticaladvicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+  <div *ngFor="let a of articles">
+    <h1 text-center style="color: crimson ; background-color:aliceblue;"> {{a.title}}</h1>
+    <p text-right>{{a.description}}</p>
+  </div>
+</ion-content>
